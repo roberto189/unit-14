@@ -1,0 +1,23 @@
+{
+    "development": {
+      "username": "root",
+      "password": "password",
+      "database": "techblog_db",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": "password",
+      "database": "techblog_db_test",
+      "host": "localhost",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": "password",
+      "database": "techblog_db_production",
+      "host": "your_production_host",
+      "dialect": "mysql"
+    }
+  }
