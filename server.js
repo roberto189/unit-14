@@ -37,10 +37,11 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Routes
-app.use(express.static("public"))
+app.use('/', allRoutes);
 
-app.use(routes);
-
+// Sync Sequelize models and start server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => {
+        console.log('App listening on PORT ' + PORT);
+    });
 });
