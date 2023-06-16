@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 // Configure session
 const sess = {
-    secret: 'the x-files',
+    secret: 'secret',
     cookie: { maxAge: 36000 },
     resave: false,
     saveUninitialized: true,
@@ -37,11 +37,10 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Routes
-app.use('/', allRoutes);
+app.use(express.static("public"))
 
-// Sync Sequelize models and start server
+app.use(routes);
+
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => {
-        console.log('App listening on PORT ' + PORT);
-    });
+  app.listen(PORT, () => console.log('Now listening'));
 });
