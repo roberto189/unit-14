@@ -3,7 +3,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const cors = require('cors');
-const { Sequelize } = require('sequelize');
+// const {sequelize } = require('sequelize');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const helpers = require('./utils/helpers.js');
@@ -37,7 +37,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Routes
-app.use('/', allRoutes);
+// app.use('/', allRoutes);
+app.use(require("./controllers"));
 
 // Sync Sequelize models and start server
 sequelize.sync({ force: false }).then(() => {

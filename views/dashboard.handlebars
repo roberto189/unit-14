@@ -1,11 +1,11 @@
 <h1 class="display-4">Dashboard</h1>
 <h4 id="username" data-id="{{id}}">{{username}} Posts</h4>
 
-{{#if posts.length}}
-  {{#each posts}}
-    <div id="post" data-id="{{this.id}}" class="card">
+{{!-- {{#if post.length}} --}}
+  {{#each posts as |post|}}
+    <div id="post" data-id="{{post.id}}" class="card">
       <div class="card-header">
-        {{this.title}}
+        {{post.title}}
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
@@ -17,9 +17,9 @@
       </div>
     </div>
   {{/each}}
-{{else}}
+{{!-- {{else}}
   <p>No posts found.</p>
-{{/if}}
+{{/if}} --}}
 
 <button type="button" id="addPostButton" data-toggle="modal" data-target="#addPostModal" class="btn btn-primary">Add post</button>
 
