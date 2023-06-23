@@ -3,31 +3,31 @@ const router = require('express').Router();
 
 router.get('/', (req, res) => {
     Post.findAll({
-            attributes: [
-                'id',
-                'title',
-                'content',
-                'created_at'
-            ],
-            include: [{
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-                {
-                    model: User,
-                    attributes: ['username']
-                }
-            ]
+            // attributes: [
+            //     'id',
+            //     'title',
+            //     'content',
+            //     'created_at'
+            // ],
+            // include: [{
+            //         model: Comment,
+            //         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+            //     //     include: {
+            //     //         model: User,
+            //     //         attributes: ['username']
+            //     //     }
+            //     },
+            //     {
+            //         model: User,
+            //         attributes: ['username']
+            //     }
+            // ]
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
             console.log(req.session.loggedIn);
             console.log(req.session);
-            res.render('home', { posts, loggedIn: req.session.loggedIn });
+            res.render('home',  posts);
         })
         .catch(err => {
             console.log(err);

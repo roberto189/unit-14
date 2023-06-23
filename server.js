@@ -37,8 +37,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Routes
-// app.use('/', allRoutes);
-app.use(require("./controllers"));
+app.use(allRoutes);
+// app.use(require("./controllers"));
 
 // Sync Sequelize models and start server
 sequelize.sync({ force: false }).then(() => {
