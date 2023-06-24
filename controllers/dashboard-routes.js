@@ -4,6 +4,7 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', withAuth, async (req, res) => {
+    console.log("route hit")
     try {
         const dbpostdata= await Post.findAll({  
             where: {
@@ -32,7 +33,7 @@ router.get('/', withAuth, async (req, res) => {
             //         attributes: ['username']
             //     }
             // ]
-        
+        console.log("dashboard info", posts)
         
             res.render('dashboard', { posts });
     }

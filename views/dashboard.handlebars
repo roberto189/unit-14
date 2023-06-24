@@ -1,7 +1,7 @@
 <h1 class="display-4">Dashboard</h1>
 <h4 id="username" data-id="{{id}}">{{username}} Posts</h4>
 
-{{!-- {{#if post.length}} --}}
+{{#if posts.length}}
   {{#each posts }}
     <div id="post" data-id="{{id}}" class="card">
       <div class="card-header">
@@ -30,9 +30,9 @@
         <button id="updatePost" type="button" class="btn btn-primary">Update post</button>
       </div>
     </div>
-{{!-- {{else}}
+{{else}}
   <p>No posts found.</p>
-{{/if}} --}}
+{{/if}}
 
 <button type="button" id="addPostButton" data-toggle="modal" data-target="#addPostModal" class="btn btn-primary">Add post</button>
 
