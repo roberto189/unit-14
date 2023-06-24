@@ -53,3 +53,4 @@ Modify the environment variables in the `.env` file according to your setup.
 
 Tech Blog provides a platform for users to create, view, and comment on blog posts. It incorporates user authentication, database integration, and a responsive UI using Bootstrap.
 
+https://tech14blog-63c69b1a979e.herokuapp.com/
